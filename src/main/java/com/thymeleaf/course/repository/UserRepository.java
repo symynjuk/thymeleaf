@@ -17,5 +17,6 @@ public class UserRepository {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
         users.add(user);
+
     }
 }
