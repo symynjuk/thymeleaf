@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8"/>
@@ -10,20 +9,43 @@
     <title>Thymeleaf</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css">
+</head>
 <body>
 <div class="container">
-    <div layout:fragment="replace_frgment">
         <div class="container">
-            <h3 class="text-center display-4 font-weight-bold pt-5 text-success">Companies</h3>
+            <h3 class="text-center display-5 font-weight-bold pt-5 text-success">Companies employees</h3>
         </div>
         <table>
             <th:block th:each="company : ${companies}">
                 <tr>
                     <td th:text="${company.getName()}">...</td>
+                        <tr>
+                           <table class="table table-bordered">
+                               <thead>
+                               <tr>
+                                   <th>Id</th>
+                                   <th>First name</th>
+                                   <th>Last name</th>
+                                   <th>Email</th>
+                                   <th>Gender</th>
+                                   <th>Company</th>
+                                   <th>Skill</th>
+                               </tr>
+                               <tr th:each="employee : ${company.employees}" >
+                                   <td th:text="${employee.getId()}"> ID </td>
+                                   <td th:text="${employee.getFirstName()}"> First Name </td>
+                                   <td th:text="${employee.getLastName()}"> Last Name </td>
+                                   <td th:text="${employee.getEmail()}"> email </td>
+                                   <td th:text="${employee.getGender()}"> gender </td>
+                                   <td th:text="${company.name}"> company </td>
+                                   <td th:text="${employee.getSkill()}"> skill </td>
+                               </tr>
+                               </thead>
+                           </table>
+                        </tr>
                 </tr>
             </th:block>
         </table>
-    </div>
 </div>
 </body>
 </html>
