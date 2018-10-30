@@ -13,8 +13,9 @@ public class CompanyController {
 
     @Autowired
     private CompanyService companyService;
+
     @GetMapping
-    public String getCompanies(Model model){
+    public String getCompanies(Model model) {
         model.addAttribute("companies", companyService.getAllCompanies());
         return "company";
     }
