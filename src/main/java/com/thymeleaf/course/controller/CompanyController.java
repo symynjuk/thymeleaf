@@ -18,7 +18,4 @@ public class CompanyController {
         model.addAttribute("companies", companyService.getAllCompanies());
         return "company";
     }
-
-    /* TODO You need to implement endpoint here. */
-    /* TODO Endpoint should be map by Get method. You need to retrieve data from service, and return it to the 'company.html'. */
 }

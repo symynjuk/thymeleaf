@@ -17,7 +17,6 @@ public class UserService {
     UserRepository userRepository;
 
     public void saveUser(UserSignUpRequest request) {
-       /* TODO userRepository.save(request)*/
        userRepository.save(request);
     }
 }
